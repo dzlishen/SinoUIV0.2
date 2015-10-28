@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/bingotouch.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/datepicker.css"/>
+</head>
+<body>
+<article class="active" id="menu_article" data-scroll="true" data--jscroll-="_jscroll_2" style="overflow: hidden;">
+    <button class="button" id="btn_popup_calendar" style="margin: 20px; transition-property: transform; -webkit-transition-property: transform; transition-duration: 0ms; -webkit-transition-duration: 0ms; transform-origin: 0px 0px 0px; transform: translate(0px, 0px) translateZ(0px);">点击弹出日历</button>
+    <div id="calendar_demo" style="margin:10px;"></div>
+</article>
+<script type="text/javascript" src="../lib/zepto.js"></script>
+<script type="text/javascript" src="../lib/iscroll.js"></script>
+<script type="text/javascript" src="../lib/template.min.js"></script>
+<script type="text/javascript" src="../lib/hammer.js"></script>
+<script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+<script type="text/javascript" src="../lib/zepto.touch2mouse.js"></script>
+<script>
+    new H.Calendar('#calendar_demo',{
+        onRenderDay : function(day,date){
+            if(day == 5){
+                return '<div>'+day+'</div><div style="font-size: .8em;color: red">威武</div>'
+            }
+            return day;
+        },
+        onSelect:function(date){
+            alert(date);
+        }
+    });
+    $('#btn_popup_calendar').tap(function(){
+        H.popup({
+            html : '<div id="popup_calendar"></div>',
+            pos : 'center',
+            backgroundOpacity : 0.4,
+            showCloseBtn : false,
+            onShow : function(){
+                new H.Calendar('#popup_calendar',{
+                    date : new Date(2013,7,1),
+                    onSelect:function(date){
+                        $('#btn_popup_calendar').text(date);
+                        H.closePopup();
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

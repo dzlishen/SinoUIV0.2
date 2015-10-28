@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+</head>
+<body>
+    <div class="demo-btn-group" style="padding: 10px;">
+        <a href="#" class="sui-btn sui-btn-block sui-btn-green" id="btn_alert">alert</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_confirm">confirm</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_loading">loading</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_center">center</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_from_tpl">center(来自模板)</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_p_top">top</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_t_ts">top-second</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_t_bottom">bottom</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_t_bs">botton-second</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_popover">popover</a>
+        <a href="#" class="sui-btn sui-btn-block" id="btn_actionsheet">actionsheet</a>
+    </div>
+    <script type="text/html" id="tpl_popup_login">
+        <div style="padding:10px 20px;">
+            <div style="text-align:center;font-size:20px;color:#3498DB;font-weight:600;margin:5px 0;">登录</div>
+            <input type="text" name="name" placeholder="用户名">
+            <input type="password" name="password" placeholder="密码">
+            <button class="sui-btn-block pd-a pd-l1 pd-r1" data-icon="sui-icon-checkmark" onclick="sinoApp.showToast('123')" data-target="closePopup">登录</button>
+        </div>
+    </script>
+    <script type="text/javascript" src="../lib/zepto.js"></script>
+    <script type="text/javascript" src="../lib/iscroll.js"></script>
+    <script type="text/javascript" src="../lib/template.min.js"></script>
+    <script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+    <script type="text/javascript" src="../lib/zepto.touch2mouse.js"></script>
+    <script type="text/javascript">
+        $('#btn_alert').tap(function(){
+            H.alert('提示','这是一个Alert');
+        })
+        $('#btn_confirm').tap(function(){
+            H.confirm('提示','这是一个Confirm！',function(){H.showToast('你选择了“确定”吗','1500','toasttopicon')},function(){H.showToast('你选择了“取消”','1500','toastlefticon')});
+        })
+        $('#btn_loading').tap(function(){
+            //H.showLoading();
+            H.showLoading({
+                pos:'loading1 loading',
+                showCloseBtn:false
+            })
+        })
+        $('#btn_center').tap(function(){
+            H.popup({
+                html: '<div style="height: 100px;text-align: center;font-size: 20px;font-weight: 600;margin-top: 10px;color:#E74C3C ">随意设计你的弹出框吧</div>',
+                pos : 'center'
+            })
+        })
+        $('#btn_from_tpl').tap(function(){
+            H.popup({
+                tplId : 'tpl_popup_login',
+                pos : 'center'
+            })
+        })
+        $('#btn_p_top').tap(function(){
+            H.popup({
+                html: '这是一个来自顶部的弹出框',
+                pos : 'top',
+                showCloseBtn : false
+            })
+        })
+        $('#btn_t_ts').tap(function(){
+            H.popup({
+                html: '这是一个在header之下的弹出框',
+                pos : 'top-second',
+                showCloseBtn : false
+            })
+        })
+        $('#btn_t_bottom').tap(function(){
+            H.popup({
+                html: '这是一个来自底部弹出框',
+                pos : 'bottom',
+                showCloseBtn : false
+            })
+        })
+        $('#btn_t_bs').tap(function(){
+            H.popup({
+                html: '这是一个在footer之上的弹出框',
+                pos : 'bottom-second',
+                showCloseBtn : false
+            })
+        })
+        $('#btn_popover').tap(function(){
+            H.popover('<ul class="list"><li style="color:#000;">Hello Jingle</li><li style="color:#000;">你好，Jingle</li></ul>',{top:'50px',left:'10%',right:'10%'},'top');
+        });
+        $('#btn_actionsheet').tap(function(){
+            H.actionSheet([{
+                text : '告诉QQ好友',
+                handler : function(){
+                    H.showToast('告诉QQ好友！');
+                }
+            },{
+                text : '告诉MSN好友',
+                handler : function(){
+                    H.showToast('告诉MSN好友！');
+                }
+            }
+            ]);
+        });
+    </script>
+</body>
+</html>

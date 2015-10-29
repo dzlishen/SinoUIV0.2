@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/bingotouch.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/datepicker.css"/>
+</head>
+<body>
+<div class="">
+    <div class="sui-h4">顶部</div>
+    <div class="ub">
+        <div class="label">年月日时分：</div>
+        <div>
+            <input value="2015-05-01 15:42" class="input-large" readonly="" name="t_appDateTime"
+                   id="t_appDateTime" type="text">
+        </div>
+    </div>
+    <div class="sui-h4">冒泡</div>
+
+    <div class="ub">
+        <div class="label">年月日时分：</div>
+        <div>
+            <input value="2015-05-01 15:42" class="input-large" readonly="" name="b_appDateTime"
+                   id="b_appDateTime" type="text">
+        </div>
+    </div>
+    <div class="sui-h4">中间</div>
+
+    <div class="ub">
+        <div class="label">年月日时分：</div>
+        <div>
+            <input value="2015-05-01 15:42" class="input-large" readonly="" name="m_appDateTime"
+                   id="m_appDateTime" type="text">
+        </div>
+    </div>
+    <div class="sui-h4">底部</div>
+
+    <div class="ub">
+        <div class="label">年月日时分：</div>
+        <div>
+            <input value="2015-05-01 15:42" class="input-large" readonly="" name="appDateTime"
+                   id="appDateTime" type="text">
+        </div>
+    </div>
+    <div class="ub">
+        <div class="label">年月日：</div>
+        <div>
+            <input value="2008-09-01" class="input-large" readonly="" name="appDate" id="appDate"
+                   type="text">
+        </div>
+    </div>
+    <div class="ub">
+        <div class="label">年月：</div>
+        <div>
+            <input value="2016-06" class="input-large" readonly="" name="appDate" id="appYM"
+                   type="text">
+        </div>
+    </div>
+    <div class="ub">
+        <div class="label">月日：</div>
+        <div>
+            <input value="06-20" class="input-large" readonly="" name="appDate" id="appMD" type="text">
+        </div>
+    </div>
+    <div class="ub">
+        <div class="label">时分：</div>
+        <div>
+            <input value="16:43" class="input-large" readonly="" name="appTime" id="appTime"
+                   type="text">
+        </div>
+    </div>
+    <div class="ub">
+        <div class="label">时：</div>
+        <div>
+            <input value="16" class="input-large" readonly="" name="appTime" id="appHH" type="text">
+        </div>
+    </div>
+    <div class="ub">
+        <div class="label">分：</div>
+        <div>
+            <input value="50" class="input-large" readonly="" name="appTime" id="appII" type="text">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../lib/zepto.js"></script>
+<script type="text/javascript" src="../lib/iscroll.js"></script>
+<script type="text/javascript" src="../lib/template.min.js"></script>
+<script type="text/javascript" src="../lib/hammer.js"></script>
+<script type="text/javascript" src="../lib/datepicker.js"></script>
+<script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+<script type="text/javascript" src="../lib/zepto.touch2mouse.js"></script>
+<script>
+
+    var currYear = (new Date()).getFullYear();
+    var dateTime = {
+        preset: 'datetime',
+        dateFormat: 'yyyy-mm-dd',
+        timeFormat: 'HH:ii', //这里使用ii代替分钟mm(避免与月份冲突)
+        startYear: currYear - 20, //开始年份
+        endYear: currYear + 20, //结束年份
+        showNow: true, //是否显示今天的按钮
+        nowText: "今天"
+    };
+    //顶部-年月日时分
+    $("#t_appDateTime").datepicker($.extend({display: 'top'}, dateTime));
+
+    //冒泡-年月日时分
+    $("#b_appDateTime").datepicker($.extend({display: 'bubble'}, dateTime));
+
+    //中间-年月日时分
+    $("#m_appDateTime").datepicker($.extend({display: 'modal'}, dateTime));
+
+    //底部-年月日时分
+    $("#appDateTime").datepicker($.extend({display: 'bottom'}, dateTime));
+
+
+    //年月日
+    $("#appDate").datepicker({
+        preset: 'date',
+        display: 'bottom', //显示方式
+        dateFormat: 'yyyy-mm-dd',
+        startYear: currYear - 20, //开始年份
+        endYear: currYear + 10, //结束年份
+        showNow: true, //是否显示今天的按钮
+        nowText: "今天"
+    });
+
+    //年月
+    $("#appYM").datepicker({
+        preset: 'date',
+        display: 'bottom', //显示方式
+        dateFormat: 'yyyy-mm',
+        startYear: currYear - 20, //开始年份
+        endYear: currYear + 10, //结束年份
+        showNow: true, //是否显示今天的按钮
+        nowText: "今天"
+    });
+
+    //月日（当年的）
+    $("#appMD").datepicker({
+        preset: 'date',
+        display: 'bottom', //显示方式
+        dateFormat: 'mm-dd',
+        showNow: true, //是否显示今天的按钮
+        nowText: "今天"
+    });
+
+    //时分
+    $("#appTime").datepicker({
+        preset: 'time',
+        display: 'bottom', //显示方式
+        timeFormat: 'HH:ii',//这里使用ii代替分钟mm(避免与月份冲突)
+        showNow: true, //是否显示今天的按钮
+        nowText: "今天"
+    });
+
+    //时
+    $("#appHH").datepicker({
+        preset: 'time',
+        display: 'bottom', //显示方式
+        timeFormat: 'HH',//这里使用ii代替分钟mm(避免与月份冲突)
+        showNow: true, //是否显示今天的按钮
+        nowText: "今天"
+    });
+
+    //分
+    $("#appII").datepicker({
+        preset: 'time',
+        display: 'bottom', //显示方式
+        timeFormat: 'ii',//这里使用ii代替分钟mm(避免与月份冲突)
+        showNow: true, //是否显示今天的按钮
+        nowText: "今天"
+    });
+</script>
+</body>
+</html>

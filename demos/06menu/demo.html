@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+</head>
+<body>
+<div id="menu-container">
+    <div id="aside-container">
+        <aside id="left_push_aside" data-position="left" data-transition="push">
+            <div class="header">左侧菜单</div>
+            <div class="center">
+                <ul class="menu">
+                    <li><a href="#">data-position="left"</a></li>
+                    <li><a href="#">data-transition="push"</a></li>
+                    <li><a href="#">左划关闭</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside id="left_overlay_aside" data-position="left" data-transition="overlay">
+            <div class="header">左侧菜单</div>
+            <div class="center">
+                <ul class="menu">
+                    <li><a href="#">data-position="left"</a></li>
+                    <li><a href="#">data-transition="overlay"</a></li>
+                    <li><a href="#">左划关闭</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside id="left_reveal_aside" data-position="left" data-transition="reveal">
+            <div class="header">左侧菜单</div>
+            <div class="center">
+                <ul class="menu">
+                    <li><a href="#">data-position="left"</a></li>
+                    <li><a href="#">data-transition="reveal"</a></li>
+                    <li><a href="#">左划关闭</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside id="show_close_aside" data-position="left" data-transition="push" data-show-close="true">
+            <div class="header">左侧菜单</div>
+            <div class="center">
+                <ul class="menu">
+                    <li><a href="#">data-show-close="true"</a></li>
+                    <li><a href="#">左划关闭</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside id="left_scale_aside" data-position="left" data-transition="scale" data-show-close="true">
+            <div class="header">左侧绽放菜单</div>
+            <div class="center">
+                <ul class="menu">
+                    <li><a href="#">左划关闭</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside id="right_push_aside" data-position="right" data-transition="push">
+            <div class="header">右侧菜单</div>
+            <div class="center">
+                <ul class="menu">
+                    <li><a href="#">data-position="right"</a></li>
+                    <li><a href="#">data-transition="push"</a></li>
+                    <li><a href="#">右划关闭</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside id="right_overlay_aside" data-position="right" data-transition="overlay">
+            <div class="header">右侧菜单</div>
+            <div class="center">
+                <ul class="menu">
+                    <li><a href="#">data-position="right"</a></li>
+                    <li><a href="#">data-transition="overlay"</a></li>
+                    <li><a href="#">右划关闭</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside id="right_reveal_aside" data-position="right" data-transition="reveal">
+            <div class="header">右侧菜单</div>
+            <div class="center">
+                <ul class="menu">
+                    <li><a href="#">data-position="right"</a></li>
+                    <li><a href="#">data-transition="reveal"</a></li>
+                    <li><a href="#">右划关闭</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside id="custom_width_aside" data-position="right" data-transition="push" style="width:80px;">
+            <div class="center">
+                <ul class="menu" style="text-align: center;font-size: 2em;">
+                    <li style="padding: 10px 0;">
+                        <i class="icon sui-icon-connection"></i>
+                    </li>
+                    <li style="padding: 10px 0;">
+                        <i class="icon sui-icon-camera"></i>
+                    </li>
+                    <li style="padding: 10px 0;">
+                        <i class="icon sui-icon-podcast"></i>
+                    </li>
+                    <li style="padding: 10px 0;">
+                        <i class="icon sui-icon-target"></i>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <div id="content-container">
+        <div id="menu_section" class="active bgc-white">
+            <div class="scroll-container" id="menu_article"  data-scroll="true">
+                <div class="scrollWrapper" style="padding-top:1px;">
+                    <h1> 左侧菜单栏</h1>
+                    <div>
+                        <a class="sui-btn sui-btn-green" data-menu="#left_push_aside" data-target="menu">push</a>
+                        <a class="sui-btn sui-btn-green" data-menu="#left_overlay_aside" data-target="menu">overlay</a>
+                        <a class="sui-btn sui-btn-green" data-menu="#left_reveal_aside" data-target="menu">reveal</a>
+                        <a class="sui-btn sui-btn-green" data-menu="#show_close_aside" data-target="menu">show close</a>
+                        <a class="sui-btn sui-btn-green" data-menu="#left_scale_aside" data-target="menu">scale</a>
+                    </div>
+                    <h1> 右侧菜单栏</h1>
+                    <div>
+                        <a class="sui-btn sui-btn-green" data-menu="#right_push_aside" data-target="menu">push</a>
+                        <a class="sui-btn sui-btn-green" data-menu="#right_overlay_aside" data-target="menu">overlay</a>
+                        <a class="sui-btn sui-btn-green" data-menu="#right_reveal_aside" data-target="menu">reveal</a>
+                        <a class="sui-btn sui-btn-green" data-menu="#custom_width_aside" data-target="menu">自定义宽度</a>
+                    </div>
+
+                    <div>
+                        <ul class="mg-l1 mg-r1 mg-t1">
+                            <li class="uc-t uba bc-gra1 pd-a pos-r">aside上的配置</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">默认宽度为264px</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">data-position="left | right"</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">data-transition="push | overlay | reveal"</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">data-show-close="true | false"</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">push</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">侧边栏与页面同时滑动</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">overlay</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">侧边栏从页面上层划出</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">reveal</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">侧边栏在底部，页面其上方划出</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">默认宽度为264px</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">data-position="left | right"</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">data-transition="push | overlay | reveal"</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">data-show-close="true | false"</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">push</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">侧边栏与页面同时滑动</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">overlay</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">侧边栏从页面上层划出</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">reveal</li>
+                            <li class="uba b-tnone bc-gra1 pd-a pos-r">侧边栏在底部，页面其上方划出</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--<script type="text/javascript" src="../../release/0.0.2/js/zepto.Debug.js"></script>-->
+    <script type="text/javascript" src="../lib/zepto.js"></script>
+    <script type="text/javascript" src="../lib/zepto.touch2mouse.js"></script>
+    <script type="text/javascript" src="../lib/iscroll.js"></script>
+    <!--<script type="text/javascript" src="../lib/fastclick.js"></script>-->
+    <script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+    <script type="text/javascript">
+        H.sinoAppInit();
+    </script>
+</body>
+</html>

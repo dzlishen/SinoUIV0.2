@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+</head>
+<body>
+<div id="sui-container">
+    <div id="slider_test" class="slider" style="transition-property: transform; -webkit-transition-property: transform; transition-duration: 0ms; -webkit-transition-duration: 0ms; transform-origin: 0px 0px 0px; transform: translate(0px, 0px) translateZ(0px);">
+        <div class="sui-slider-wheel">
+            <div class="slider-item" style="text-align: center"><img src="image/1.jpg">
+                <p>1</p>
+            </div>
+            <div class="slider-item" style="text-align: center"><img src="image/2.jpg">
+                <p>2</p>
+            </div>
+            <div class="slider-item" style="text-align: center"><img src="image/3.jpg">
+                <p>3</p>
+            </div>
+            <div class="slider-item" style="text-align: center;"><img src="image/4.jpg">
+                <p>4</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../lib/zepto.js"></script>
+<script type="text/javascript" src="../lib/iscroll.js"></script>
+<script type="text/javascript" src="../lib/template.min.js"></script>
+<script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+<script type="text/javascript" src="../lib/zepto.touch2mouse.js"></script>
+<script type="text/javascript">
+    var slider = new H.Slider({
+        selector: '#slider_test',
+        onBeforeSlide: function() {
+            return true;
+        },
+        speed: 1000,
+        autoPlay: true
+    });
+    $('#slider_prev').tap(function() {
+        slider.prev()
+    });
+    $('#slider_next').tap(function() {
+        slider.next()
+    });
+</script>
+</body>
+</html>

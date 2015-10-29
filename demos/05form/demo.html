@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SinoUI表单示例</title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+</head>
+<body>
+    <div id="sui-container" class="ub ub-ver ub-fv">
+        <div class="ub-f1 sino-content">
+            <div class="scroll-container">
+                <div id="" class="scroll-content" data-scroll="true">
+                    <div class="scrollWrapper">
+                        <!--输入框-->
+                        <div class="ub ub-ac pd-t1">
+                            <div class="pd-l1">用户名</div>
+                            <div class="ub-f1 sui-pd3">
+                                <div class="sui-input us-i ubs uc-a1 uba bc-gra">
+                                    <input type="text" name="" id="" value="" placeholder="用户名" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--输入框结束-->
+                        <!--输入框形式的div-->
+                        <div class="sui-pd3 mg-t1">
+                            <div class="sui-input us-i ubs uc-a1 uba bc-gra">
+                                <div type="text" class="input">中国人民</div>
+                            </div>
+                        </div>
+                        <!--输入框形式的div结束-->
+                        <!--下拉列表-->
+                        <div class="sui-pd3 mg-t1">
+                            <div class="sui-select sui-input ub us-i ubs uc-a1 uba bc-gra">
+                                <div class="input ub-f1 select-text">请选择</div>
+                                <div class="min-w1 sui-icon-expand-more fts15"></div>
+                                <select name="" id="tttt" onchange="sinoSelect(this.id)" data-select>
+                                    <option value="">中国人</option>
+                                    <option value="">美国人</option>
+                                    <option value="">英国人</option>
+                                    <option value="">法国人</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--下拉列表结束-->
+                        <!--多行文本-->
+                        <div class="sui-pd3 mg-t1">
+                            <div class="sui-select sui-input ub us-i ubs uc-a1 uba bc-gra">
+                                <textarea name="" rows="4" cols=""></textarea>
+                            </div>
+                        </div>
+                        <!--多行文本结束-->
+                        <!--单选竖向-->
+                        <div class="ubs uc-a1 mg-l1 mg-r1 mg-t1 sui-radio-group">
+                            <input type="radio" name="rdi1" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba b-bnone bc-gra1 uc-t1 bgc-white sui-pd sui-radio" data-radio="true">
+                                <div class="ub-f1 ut-s tx-l">item1</div>
+                                <div class="sui-icon sui-icon-radio-unchecked fts15"></div>
+                            </div>
+                            <input type="radio" name="rdi1" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba bc-gra1 bgc-white sui-pd sui-radio" data-radio="true">
+                                <div class="ub-f1 ut-s tx-l">item2</div>
+                                <div class="sui-icon sui-icon-radio-unchecked fts15"></div>
+                            </div>
+                            <input type="radio" name="rdi1" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba b-tnone bc-gra1 uc-b1 bgc-white sui-pd sui-radio" data-radio="true">
+                                <div class="ub-f1 ut-s tx-l">item3</div>
+                                <div class="sui-icon sui-icon-radio-unchecked fts15"></div>
+                            </div>
+                        </div>
+                        <!--单选竖向结束-->
+                        <!--单选横向-->
+                        <div class="ubs uc-a1 mg-l1 mg-r1 mg-t1 sui-radio-group-horizontal ub">
+                            <input type="radio" name="rdi1" value="" class="sui-hide" />
+                            <div class="ub ub-f1 ub-ac uba b-rnone uc-l1 bc-gra1 bgc-white sui-pd sui-radio" data-radio="true">
+                                <div class="ub-f1 ut-s tx-c">item1</div>
+                            </div>
+                            <input type="radio" name="rdi1" value="" class="sui-hide" />
+                            <div class="ub ub-f1 ub-ac uba b-rnone bc-gra1 bgc-white sui-pd sui-radio" data-radio="true">
+                                <div class="ub-f1 ut-s tx-c">item2</div>
+                            </div>
+                            <input type="radio" name="rdi1" value="" class="sui-hide" />
+                            <div class="ub ub-f1 ub-ac uba uc-r1 bc-gra1 bgc-white sui-pd sui-radio" data-radio="true">
+                                <div class="ub-f1 ut-s tx-c">item3</div>
+                            </div>
+                        </div>
+                        <!--单选横向结束-->
+                        <!--多选竖向-->
+                        <div class="ubs uc-a1 mg-l1 mg-r1 mg-t1 sui-checkbox-group">
+                            <input type="checkbox" name="chb1" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba b-bnone bc-gra1 uc-t1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="ub-f1 ut-s tx-l">item1</div>
+                                <div class="sui-icon sui-icon-checkbox-unchecked fts15"></div>
+                            </div>
+                            <input type="checkbox" name="chb2" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba bc-gra1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="ub-f1 ut-s tx-l">item2</div>
+                                <div class="sui-icon sui-icon-checkbox-unchecked fts15"></div>
+                            </div>
+                            <input type="checkbox" name="chb3" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba b-tnone bc-gra1 uc-b1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="ub-f1 ut-s tx-l">item3</div>
+                                <div class="sui-icon sui-icon-checkbox-unchecked fts15"></div>
+                            </div>
+                        </div>
+                        <!--多选竖向结束-->
+                        <!--多选图标在前-->
+                        <div class="ubs uc-a1 mg-l1 mg-r1 mg-t1 sui-checkbox-group">
+                            <input type="checkbox" name="chb1" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba b-bnone bc-gra1 uc-t1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="sui-icon sui-icon-checkbox-unchecked pd-r fts15"></div>
+                                <div class="ub-f1 ut-s tx-l">item1</div>
+
+                            </div>
+                            <input type="checkbox" name="chb2" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba bc-gra1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="sui-icon sui-icon-checkbox-unchecked pd-r fts15"></div>
+                                <div class="ub-f1 ut-s tx-l">item2</div>
+
+                            </div>
+                            <input type="checkbox" name="chb3" value="" class="sui-hide" />
+                            <div class="ub ub-ac uba b-tnone bc-gra1 uc-b1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="sui-icon sui-icon-checkbox-unchecked pd-r fts15"></div>
+                                <div class="ub-f1 ut-s tx-l">item3</div>
+
+                            </div>
+                        </div>
+                        <!--多选图标在前结束-->
+                        <!--多选横向-->
+                        <div class="ubs uc-a1 mg-l1 mg-r1 mg-t1 sui-checkbox-group-horizontal ub">
+                            <input type="checkbox" name="chb1" value="" class="sui-hide" />
+                            <div class="ub ub-f1 ub-ac uba b-rnone bc-gra1 uc-l1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="ub-f1 ut-s tx-c">item1</div>
+                            </div>
+                            <input type="checkbox" name="chb2" value="" class="sui-hide" />
+                            <div class="ub ub-f1 ub-ac uba b-rnone bc-gra1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="ub-f1 ut-s tx-c">item2</div>
+                            </div>
+                            <input type="checkbox" name="chb2" value="" class="sui-hide" />
+                            <div class="ub ub-f1 ub-ac uba b-rnone bc-gra1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="ub-f1 ut-s tx-c">item2</div>
+                            </div>
+                            <input type="checkbox" name="chb3" value="" class="sui-hide" />
+                            <div class="ub ub-f1 ub-ac uba bc-gra1 uc-r1 bgc-white sui-pd sui-checkbox" data-checkbox="true">
+                                <div class="ub-f1 ut-s tx-c">item3</div>
+
+                            </div>
+                        </div>
+                        <!--多选横向结束-->
+                        <!--开关按钮无文字版-->
+                        <div class="sui-pd3 mg-t1">
+                            <div class="ub us-i ubs uc-a1 uba bc-gra min-h1 sui-pd ub-ac">
+                                <div class="ub-f1">是否正确</div>
+                                <input type="checkbox" name="switch2" class="sui-hide" />
+                                <div class="sui-switch sui-switch-mini" data-switch="true">
+                                    <div class="sui-switch-handle"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--开关按钮无文字版结束-->
+                        <!--开关按钮带文字版-->
+                        <div class="sui-list sui-list-active ubt bc-gra1 mg-t1">
+                            <ul class="ub ub-ac sui-list-item">
+                                <li class="ub-f1 sui-list-text sui-list-nowrap">这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分</li>
+                                <li class="text-right">2010-10-12</li>
+                                <li class="">
+                                    <input type="checkbox" name="switch1" class="sui-hide" />
+                                    <div class="sui-switch" data-switch="true">
+                                        <div class="sui-switch-handle"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="ub ub-ac sui-list-item">
+                                <li class="ub-f1 sui-list-text sui-list-nowrap">这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分这是文字部分</li>
+                                <li class="text-right">2010-10-12</li>
+                            </ul>
+                        </div>
+                        <!--开关按钮带文字版结束-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../lib/zepto.js"></script>
+    <script type="text/javascript" src="../lib/iscroll.js"></script>
+    <script type="text/javascript" src="../lib/fastclick.js"></script>
+    <script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+    <script type="text/javascript">
+        H.sinoAppInit({vScrollbar:true});
+    </script>
+</body>
+</html>

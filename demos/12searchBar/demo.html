@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/sui-fonts.css"/>
+</head>
+<body>
+<div id="sui-container" class="ub ub-ver ub-fv">
+    <header class="sui-header ub uh ubb bc-gra1">
+        <div id="pageBack" class="min-w3 ub ub-ac ub-pc pd-l1">
+            <div class="sui-icon-chevron-left fts2"></div>
+            <div>主页</div>
+        </div>
+        <div class="ut ub-f1 ub ub-ac ub-pc ut-s tx-c">
+            <div id="pageTitle"></div>
+        </div>
+        <div id="openWrite" class="ub min-w3 ub-ac ub-pc">
+            <div class="sui-icon-write fts1"></div>
+        </div>
+    </header>
+    <div class="sui-search ub ub-ver ub-fh ub-ac bgc-gra1">
+        <div class="ub-fh ub ub-ac">
+            <div class="sui-search-bar ub-f1">
+                <div class="sui-searchbar-input sui-icon-search fts1">
+                    <input type="search" placeholder="Search">
+                    <a href="#" class="sui-searchbar-clear sui-icon-close"></a>
+                </div>
+                <a href="#" class="sui-searchbar-cancel" style="display: block; margin-right: -53px;">取消</a>
+            </div>
+            <div class="pd-l pd-r" id="editEmails">编辑</div>
+        </div>
+        <div id="search-classes" class="ub ub-fh mg-b sui-hide pos-a bgc-gra1" style="padding:0 8px;">
+            <div class="uc-a1 sui-radio-group-horizontal ub ub-f1">
+                <input type="radio" name="rdi1" value="" data-type="fajian" class="sui-hide" />
+                <div class="ub ub-f1 ub-ac uba b-rnone uc-l1 bc-gra1 bgc-white sui-radio" data-radio="true">
+                    <div class="ub-f1 ut-s ta-c">发件人</div>
+                </div>
+                <input type="radio" name="rdi1" value="" data-type="shoujian"  class="sui-hide" />
+                <div class="ub ub-f1 ub-ac uba b-rnone bc-gra1 bgc-white sui-radio" data-radio="true">
+                    <div class="ub-f1 ut-s ta-c">收件人</div>
+                </div>
+                <input type="radio" name="rdi1" value="" data-type="zhuti"  class="sui-hide" checked="checked"/>
+                <div class="ub ub-f1 ub-ac uba b-rnone bc-gra1 bgc-white sui-radio" data-radio="true">
+                    <div class="ub-f1 ut-s ta-c">主题</div>
+                </div>
+                <input type="radio" name="rdi1" value="" data-type="neirong"  class="sui-hide" />
+                <div class="ub ub-f1 ub-ac uba uc-r1 bc-gra1 bgc-white sui-radio" data-radio="true">
+                    <div class="ub-f1 ut-s ta-c">内容</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ub-f1 sui-content" id="sinoContent">
+        <div class="scroll-container">
+            <div class="scroll-content" data-scroll="true">
+                <div class="scrollWrapper">
+                    <div class="sui-list emailList" id="cont-list"></div>
+                    <div class="tx-c pd-a1 c-blu sui-hide loadMore">加载更多</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../lib/zepto.js"></script>
+<script type="text/javascript" src="../lib/iscroll.js"></script>
+<script type="text/javascript" src="../lib/template.min.js"></script>
+<script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+<script type="text/javascript" src="../lib/zepto.touch2mouse.js"></script>
+<script type="text/javascript">
+    H.sinoAppInit();
+    H.Refresh({
+        selector : '.scroll-content',
+        type : 'pullDown',
+        pullText : '下拉刷新...',
+        releaseText : '松手立即刷新',
+        refreshTip : '',
+        callback : function(){
+            var scroll = this;
+            getEmailList();
+        }
+    });
+    H.SearchBar('.sui-search',{
+        showSearchResult:true,
+        showOverlay:true,
+        showClasses:true,
+        animate:true,
+        callback:function(value,el,overlay,result){
+        },
+        cancelCallback:function(result){
+        }
+    });
+    getEmailList();
+    function getEmailList(){
+        var list=$('#sinoContent').find('.emailList'),listData='',str='';
+        var emailList=[{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx5IAAA=","EmailTitle":"答复: 主数据平台webservice地址注册ESB","EmailContent":"主数据平台调了正式环境服务器IP地址，同时申请了域名，请帮忙调整，谢谢啦","EmailForm":"wangxl15@teg.cn","EmailFormName":"王小玲","PushTime":"10月19日","IsRead":true,"IsHaveFuJian":true,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx5GAAA=","EmailTitle":"主数据平台webservice地址注册ESB","EmailContent":"HI，李磊","EmailForm":"wangxl15@teg.cn","EmailFormName":"王小玲","PushTime":"09月17日","IsRead":true,"IsHaveFuJian":true,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx5FAAA=","EmailTitle":null,"EmailContent":"","EmailForm":"yuhui@teg.cn","EmailFormName":"于慧","PushTime":"08月13日","IsRead":true,"IsHaveFuJian":true,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx5EAAA=","EmailTitle":"ESB地址转换","EmailContent":"株洲所法务管理系统提供门户网站的WebService地址，需要ESB平台进行转换：","EmailForm":"xiafc@teg.cn","EmailFormName":"夏方朝","PushTime":"08月05日","IsRead":true,"IsHaveFuJian":false,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx5DAAA=","EmailTitle":"转发: 根据ESB+BPM项目情况与外部厂商或作的服务内容","EmailContent":"","EmailForm":"zhanglm4@teg.cn","EmailFormName":"张利民","PushTime":"07月31日","IsRead":true,"IsHaveFuJian":true,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx5CAAA=","EmailTitle":"ESB总线访问CRM接口的账号","EmailContent":"各位好","EmailForm":"zhanglm4@teg.cn","EmailFormName":"张利民","PushTime":"07月22日","IsRead":true,"IsHaveFuJian":false,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx5BAAA=","EmailTitle":"转发: 接口发布","EmailContent":"你从这个下面复制账号名密码试试","EmailForm":"pengzx4@teg.cn","EmailFormName":"彭征新","PushTime":"07月21日","IsRead":true,"IsHaveFuJian":false,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx5AAAA=","EmailTitle":"法务系统ESB集成","EmailContent":"","EmailForm":"xiafc@teg.cn","EmailFormName":"夏方朝","PushTime":"07月02日","IsRead":true,"IsHaveFuJian":true,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx4+AAA=","EmailTitle":"转发: 接口发布","EmailContent":"接口已在ESB发布。","EmailForm":"pengzx4@teg.cn","EmailFormName":"彭征新","PushTime":"05月25日","IsRead":true,"IsHaveFuJian":false,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx4/AAA=","EmailTitle":"答复: 接口发布","EmailContent":"20120997   520BAIdu!","EmailForm":"pengzx4@teg.cn","EmailFormName":"彭征新","PushTime":"05月25日","IsRead":true,"IsHaveFuJian":false,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx49AAA=","EmailTitle":"转发: 产品成本信息化项目申请注册ESB","EmailContent":"","EmailForm":"tanlq@teg.cn","EmailFormName":"谭龙泉","PushTime":"05月22日","IsRead":true,"IsHaveFuJian":false,"shouJianList":null},{"EmailId":"AAMkADBkNDExMDY3LTMzMmYtNGY2Ni04ZWRhLTBkNDUzMDhmMTAzOABGAAAAAABmLNWrtGHbTKafxO04sOMeBwBnuM3hhCHZRIJHMNMJZPArAVr1QwAKAABnuM3hhCHZRIJHMNMJZPArAVr1Qx47AAA=","EmailTitle":"接口发布","EmailContent":"两位，以下地址是CRM系统正式环境提供给PCM的合同接口，麻烦在ESB总线上进行发布。","EmailForm":"pengzx4@teg.cn","EmailFormName":"彭征新","PushTime":"05月21日","IsRead":true,"IsHaveFuJian":false,"shouJianList":null}];
+        if(emailList.length>0){
+            for(var i=0,len=emailList.length;i<len;i++){
+                str+='<div class="pos-r swipe-list">'
+                        +'<ul class="ub sui-list-item ub-ac" style="padding:5px;" data-emailid="'+emailList[i].EmailId+'">'
+                            +'<li class="ub-f1">'
+                                +'<ul class="ub" '+getKeyevt()+'="sino_touch(\'btn-act\',function(el){openEmailDetail(\''+emailList[i].EmailId+'\',el)})">'
+                                    +'<li class="sui-list-thumb sui-list-circle bc-blu uba ub ub-ac ub-pc">'
+                                        +'<span class="fts2 c-blu">'+getFirst2Char(emailList[i].EmailFormName)+'</span>'
+                                    +'</li>'
+                                    +'<li class="ub-f1">'
+                                        +'<ul class="ub ub-ver">'
+                                            +'<li class="sui-list-text sui-list-nowrap ub ub-ac">'
+                                                +((emailList[i].IsHaveFuJian==true)?"<div class=\"sui-icon-paperclip\"></div>":"")
+                                                +((emailList[i].IsRead==true)?'<div class="ub-f1 ut-s">'+emailList[i].EmailFormName.trim()+'</div>':'<i class="email-unread"></i><div class="ub-f1 ut-s ftw-b">'+emailList[i].EmailFormName.trim()+'</div>')
+                                                +'<div>'+emailList[i].PushTime+'</div>'
+                                                +'<div class="sui-list-ricon ub-img sui-icon-chevron-right fts2"></div>'
+                                            +'</li>'
+                                            +'<li class="sui-list-summary sui-list-nowrap c-bla">'+(isDefine(emailList[i].EmailTitle)?emailList[i].EmailTitle:'')+'</li>'
+                                            +'<li class="c-gra fts-1 sui-nowrap-multi">'+emailList[i].EmailContent+'</li>'
+                                        +'</ul>'
+                                    +'</li>'
+                                +'</ul>'
+                            +'</li>'
+                        +'</ul>'
+                    +'</div>';
+            }
+            list.html(listData+str);
+            if(emailList.length==20){
+                list.next('.loadMore').removeClass('sui-hide');
+            }else{
+                list.next('.loadMore').addClass('sui-hide');
+            }
+            H.Element.scroll($('#sinoContent').find('.scroll-content'));
+            H.Element.checkbox(list.find('[data-checkbox="true"]'));
+            H.showToast('提示信息','1500');
+        }else{
+            if(pageIndex==1){
+                var str='<div class="pd-a1">无邮件</div>';
+                list.html(str);
+                H.hideToast();
+                list.next('.loadMore').addClass('sui-hide');
+                return;
+            }
+            H.showToast('已是最后一页','1500','');
+            list.next('.loadMore').addClass('sui-hide');
+        }
+    };
+    /*获取字符串前两个字节*/
+    function getFirst2Char(str){
+        str=str.trim();
+        if(!isDefine(str)){
+            return '';
+        }else{
+            if(/^[\u4e00-\u9fa5]+$/.test(str.substring(0,1))){
+                return str.substring(0,1);
+            }else{
+                return replaceReg(str.substring(0,2));
+            }
+        }
+    }
+</script>
+
+
+</body>
+</html>

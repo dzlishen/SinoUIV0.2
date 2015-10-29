@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+</head>
+<body>
+<div id="sui-container" class="ub ub-ver ub-fv">
+    <div class="ub-f1 sino-content">
+        <div class="scroll-container">
+            <div id="" class="scroll-content" data-scroll="true">
+                <div class="scrollWrapper">
+                    <div class="sui-h4 ubb bc-gra1">Smart setup方式创建</div>
+                    <div id="nav-smartSetup">
+                        <ul>
+                            <li><a href="javascript:void(0)">要闻</a></li>
+                            <li><a href="javascript:void(0)">国内</a></li>
+                            <li><a href="javascript:void(0)">国际</a></li>
+                            <li><a href="javascript:void(0)">军事</a></li>
+                            <li><a href="javascript:void(0)">社会</a></li>
+                            <li><a href="javascript:void(0)">娱乐</a></li>
+                            <li><a href="javascript:void(0)">女人</a></li>
+                            <li><a href="javascript:void(0)">体育</a></li>
+                            <li><a href="javascript:void(0)">科技</a></li>
+                            <li><a href="javascript:void(0)">互联网</a></li>
+                            <li><a href="javascript:void(0)">教育</a></li>
+                            <li><a href="javascript:void(0)">财经</a></li>
+                            <li><a href="javascript:void(0)">房产</a></li>
+                            <li><a href="javascript:void(0)">汽车</a></li>
+                        </ul>
+                    </div>
+                    <div class="sui-h4 ubb bc-gra1">Render方式创建</div>
+                    <div id="nav-render"></div>
+                    <div class="sui-h4 ubb bc-gra1">Full setup方式创建</div>
+                    <div id="nav-fullSetup" class="ui-navigator" data-mode=true>
+                        <div class="ui-navigator-wrapper" style="overflow: hidden;">
+                            <ul class="ui-navigator-list">
+                                <li><a href="javascript:void(0)">首页</a></li>
+                                <li><a href="javascript:void(0)">电影</a></li>
+                                <li><a class="cur" href="javascript:void(0)">电视剧</a></li>
+                                <li><a href="javascript:void(0)">综艺</a></li>
+                                <li><a href="javascript:void(0)">动漫</a></li>
+                                <li><a href="javascript:void(0)">电视直播</a></li>
+                                <li><a href="javascript:void(0)">我的随心看</a></li>
+                                <li><a href="javascript:void(0)">百度</a></li>
+                                <li><a href="javascript:void(0)">音乐</a></li>
+                                <li><a href="javascript:void(0)">搞笑</a></li>
+                                <li><a href="javascript:void(0)">排行榜</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sui-h4 ubb bc-gra1">左右都有fix元素(setup方式创建)</div>
+                    <div id="fix-both">
+                        <a class="ui-navigator-fixleft" href="javascript:void(0)">fixleft</a>
+                        <ul>
+                            <li><a href="javascript:void(0)">要闻</a></li>
+                            <li><a href="javascript:;">国内</a></li>
+                            <li><a class="cur" href="javascript:void(0)">国际</a></li>
+                            <li><a href="javascript:void(0)">军事</a></li>
+                            <li><a href="javascript:void(0)">社会</a></li>
+                            <li><a href="javascript:void(0)">娱乐</a></li>
+                            <li><a href="javascript:void(0)">女人</a></li>
+                            <li><a href="javascript:void(0)">体育</a></li>
+                            <li><a href="javascript:void(0)">科技</a></li>
+                            <li><a href="javascript:void(0)">互联网</a></li>
+                            <li><a href="javascript:void(0)">教育</a></li>
+                            <li><a href="javascript:void(0)">财经</a></li>
+                            <li><a href="javascript:void(0)">房产</a></li>
+                            <li><a href="javascript:void(0)">汽车</a></li>
+                        </ul>
+                        <a class="ui-navigator-fixright" href="javascript:void(0)">fixright</a>
+                    </div>
+                    <div class="sui-h4 ubb bc-gra1">左/右有多个fix元素(render方式创建)</div>
+                    <div id="fix-more"></div>
+                    <div class="sui-h4 ubb bc-gra1">tabselect事件(setup方式)</div>
+                    <div id="select">
+                        <ul>
+                            <li><a href="javascript:void(0)" data-type='core'>要闻</a></li>
+                            <li><a href="javascript:void(0)" data-type='guonei'>国内</a></li>
+                            <li><a class="cur" href="javascript:void(0)" data-type='internation'>国际</a></li>
+                            <li><a href="javascript:void(0)" data-type='war'>军事</a></li>
+                            <li><a href="javascript:void(0)" data-type='social'>社会</a></li>
+                            <li><a href="javascript:void(0)" data-type='fun'>娱乐</a></li>
+                            <li><a href="javascript:void(0)" data-type='women'>女人</a></li>
+                            <li><a href="javascript:void(0)" data-type='sport'>体育</a></li>
+                            <li><a href="javascript:void(0)" data-type='tec'>科技</a></li>
+                            <li><a href="javascript:void(0)" data-type='intenet'>互联网</a></li>
+                            <li><a href="javascript:void(0)" data-type='education'>教育</a></li>
+                            <li><a href="javascript:void(0)" data-type='money'>财经</a></li>
+                            <li><a href="javascript:void(0)" data-type='house'>房产</a></li>
+                            <li><a href="javascript:void(0)" data-type='car'>汽车</a></li>
+                        </ul>
+                    </div>
+                    <div class="sui-h4 ubb bc-gra1">scroll事件(setup方式)</div>
+                    <div id="scroll">
+                        <ul>
+                            <li><a href="javascript:void(0)" data-type='core'>要闻</a></li>
+                            <li><a href="javascript:void(0)" data-type='guonei'>国内</a></li>
+                            <li><a class="cur" href="javascript:void(0)" data-type='internation'>国际</a></li>
+                            <li><a href="javascript:void(0)" data-type='war'>军事</a></li>
+                            <li><a href="javascript:void(0)" data-type='social'>社会</a></li>
+                            <li><a href="javascript:void(0)" data-type='fun'>娱乐</a></li>
+                            <li><a href="javascript:void(0)" data-type='women'>女人</a></li>
+                            <li><a href="javascript:void(0)" data-type='sport'>体育</a></li>
+                            <li><a href="javascript:void(0)" data-type='tec'>科技</a></li>
+                            <li><a href="javascript:void(0)" data-type='intenet'>互联网</a></li>
+                            <li><a href="javascript:void(0)" data-type='education'>教育</a></li>
+                            <li><a href="javascript:void(0)" data-type='money'>财经</a></li>
+                            <li><a href="javascript:void(0)" data-type='house'>房产</a></li>
+                            <li><a href="javascript:void(0)" data-type='car'>汽车</a></li>
+                        </ul>
+                    </div>
+                    <div class="sui-h4 ubb bc-gra1">tab操作结果</div>
+                    <div id="result" style="width:80%;border:1px solid blue;padding:10px;margin:0 auto;">事件操作结果</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../lib/zepto.js"></script>
+<script type="text/javascript" src="../lib/iscroll.js"></script>
+<script type="text/javascript" src="../lib/template.min.js"></script>
+<script type="text/javascript" src="../lib/hammer.js"></script>
+<script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+<script type="text/javascript" src="../lib/zepto.touch2mouse.js"></script>
+<script>
+
+    H.Navigator('#nav-smartSetup');
+    H.Navigator('#nav-render', { //render方式创建
+        content: [{
+            text: "电影",
+            url: "javascript:;"
+        }, {
+            text: "电视剧",
+            url: "javascript:;"
+        }, {
+            text: "动漫",
+            url: "javascript:;"
+        }, {
+            text: "综艺",
+            url: "javascript:;"
+        }, {
+            text: "排行榜",
+            url: "javascript:;"
+        }, {
+            text: "应用推荐",
+            url: "javascript:;"
+        }],
+        type: 'render'
+    });
+    H.Navigator('#nav-fullSetup');
+    H.Navigator('#fix-both', { //左右都有fix元素
+        isScrollToNext: false, //出现半个tab时，不跳动到下一个tab
+        isShowShadow: false //不显示左右阴影
+    });
+    H.Navigator('#fix-more', { //render方式创建
+        content: [{
+            text: "电影",
+            url: "#test1"
+        }, {
+            text: "电视剧",
+            url: "#test2"
+        }, {
+            text: "动漫",
+            url: "#test1"
+        }, {
+            text: "综艺",
+            url: "#"
+        }, {
+            text: "排行榜",
+            url: "javascript:;"
+        }, {
+            text: "应用推荐",
+            url: "javascript:;"
+        }, {
+            text: "美女",
+            url: "javascript:;"
+        }, {
+            text: "相声",
+            url: "javascript:;"
+        }, {
+            text: "体育",
+            url: "javascript:;"
+        }, {
+            text: "资讯",
+            url: "javascript:;"
+        }, {
+            text: "游戏",
+            url: "javascript:;"
+        }, {
+            text: "个人",
+            url: "#test2",
+            pos: 'left'
+        }, {
+            text: "登录",
+            url: "http://www.baidu.com",
+            pos: 'right'
+        }], type: 'render'
+    });
+    H.Navigator('#select', {
+        tabselect: function (elem, index) {
+            $('#result').html('第' + index + '个tab的data-type为' + $(elem).attr('data-type'));
+        }
+    });
+    //iScroll相应派生的事件
+    H.Navigator('#scroll', {
+        scrollstart: function (e) {
+            $('#result').html('scrollstart');
+            count = 0;
+        },
+        scrollmove: function (e) { //iScroll相应派生的事件
+            $('#result').html('scrollmove' + (count++));
+        },
+        scrollend: function (e) { //iScroll相应派生的事件
+            $('#result').html('scrollend');
+        }
+    });
+    H.sinoAppInit();
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/sinoUI.Debug.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/sui-fonts.css"/>
+</head>
+<body>
+    <div id="section_container" class="pd-a1">
+        <div class="demo-btn-group">
+            <a href="#" class="sui-btn sui-btn-block sui-btn-grey mg-t" id="btn_t_default">default</a>
+            <a href="#" class="sui-btn sui-btn-block sui-btn-green mg-t" id="btn_t_success">success</a>
+            <a href="#" class="sui-btn sui-btn-block sui-btn-danger mg-t" id="btn_t_error">error</a>
+            <a href="#" class="sui-btn sui-btn-block sui-btn-yellow mg-t" id="btn_t_info">info</a>
+            <a href="#" class="sui-btn sui-btn-block sui-btn-yellow mg-t" id="btn_t_loading">loading</a>
+            <a href="#" class="sui-btn sui-btn-block sui-btn-blu mg-t" id="btn_t_top">顶部显示 toast top</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="../lib/zepto.js"></script>
+    <script type="text/javascript" src="../lib/zepto.touch2mouse.js"></script>
+    <script type="text/javascript" src="../lib/iscroll.js"></script>
+    <script type="text/javascript" src="../../release/0.0.2/js/SinoUI.Debug.js"></script>
+    <script type="text/javascript">
+        $('#btn_t_default').tap(function(){
+            H.showToast('这是默认的Toast,默认3s后消失',3000,'toast');
+        })
+        $('#btn_t_success').tap(function(){
+            H.showToast('恭喜，success,5s后消失',5000,'success');
+        })
+        $('#btn_t_error').tap(function(){
+            H.showToast('抱歉，error','','error');
+        })
+        $('#btn_t_info').tap(function(){
+            H.showToast('提示，info',10000,'info');
+        })
+        $('#btn_t_loading').tap(function(){
+            H.showToast('加载中..','0','toasttopicon');
+        })
+        $('#btn_t_top').tap(function(){
+            H.showToast('更新了50条数据',5000,'toast top');
+        })
+    </script>
+</body>
+</html>
